@@ -1,0 +1,36 @@
+{
+    "name": "fidelopia/firstpackage",
+    "authors": [
+        {
+            "name": "Bekele Haile",
+            "email": "bekele.haile@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "files": [
+            "src/Helper.php"
+        ],
+        "psr-4": {
+            "Fidelopia\\FirstPackage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fidelopia\\FirstPackage\\Tests": "tests/"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "dev-develop"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fidelopia\\FirstPackage\\Providers\\FirstPackageServiceProvider"
+            ],
+            "aliases": {
+                "FirstPackage": "Fidelopia\\FirstPackage\\Providers\\FirstPackageServiceProvider"
+            }
+        }
+    }
+}
