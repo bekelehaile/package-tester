@@ -78,7 +78,7 @@ return array(
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Fruitcake\\Cors\\' => array($vendorDir . '/fruitcake/php-cors/src'),
-    'Fidelopia\\FirstPackage\\tests' => array($baseDir . '/tests'),
+    'Fidelopia\\FirstPackage\\Tests' => array($baseDir . '/tests'),
     'Fidelopia\\FirstPackage\\' => array($baseDir . '/src'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),

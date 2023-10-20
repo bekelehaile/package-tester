@@ -26,7 +26,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Fidelopia\\FirstPackage\\Providers\\FirstPackageServiceProvider"
+                "Fidelopia\\FirstPackage\\Providers\\FirstPackageServiceProvider",
+                "Fidelopia\\FirstPackage\\Providers\\RouteServiceProvider"
             ],
             "aliases": {
                 "FirstPackage": "Fidelopia\\FirstPackage\\Providers\\FirstPackageServiceProvider"

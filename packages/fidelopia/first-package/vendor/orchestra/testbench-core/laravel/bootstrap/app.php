@@ -2,9 +2,8 @@
 
 use Illuminate\Support\Env;
 use Orchestra\Testbench\Foundation\Application;
-use Orchestra\Testbench\Foundation\Bootstrap\DiscoverRoutes;
-use Orchestra\Testbench\Foundation\Bootstrap\StartWorkbench;
 use Orchestra\Testbench\Foundation\Config;
+use Orchestra\Testbench\Workbench\Workbench;
 
 /**
  * Create Laravel application.
@@ -25,11 +24,8 @@ $createApp = static function (string $workingPath) {
         basePath: $config['laravel'],
         options: ['load_environment_variables' => $hasEnvironmentFile, 'extra' => $config->getExtraAttributes()],
         resolvingCallback: static function ($app) use ($config) {
-            (new StartWorkbench($config))->bootstrap($app);
-
-            $app->booted(static function ($app) use ($config) {
-                (new DiscoverRoutes($config))->bootstrap($app);
-            });
+            Workbench::startWithProviders($app, $config);
+            Workbench::discoverRoutes($app, $config);
         },
     );
 };

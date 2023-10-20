@@ -240,7 +240,9 @@ trait CreatesApplication
         return tap(new Application($this->getBasePath()), function ($app) {
             $app->bind(
                 'Illuminate\Foundation\Bootstrap\LoadConfiguration',
-                'Orchestra\Testbench\Bootstrap\LoadConfiguration'
+                static::usesTestingConcern() && ! static::usesTestingConcern(WithWorkbench::class)
+                    ? 'Orchestra\Testbench\Bootstrap\LoadConfiguration'
+                    : 'Orchestra\Testbench\Bootstrap\LoadConfigurationWithWorkbench'
             );
 
             PackageManifest::swap($app, $this);
@@ -315,7 +317,7 @@ trait CreatesApplication
      */
     protected function resolveApplicationConsoleKernel($app)
     {
-        $app->singleton('Illuminate\Contracts\Console\Kernel', 'Orchestra\Testbench\Console\Kernel');
+        $app->singleton('Illuminate\Contracts\Console\Kernel', $this->applicationConsoleKernelUsingWorkbench($app));
     }
 
     /**
@@ -326,7 +328,7 @@ trait CreatesApplication
      */
     protected function resolveApplicationHttpKernel($app)
     {
-        $app->singleton('Illuminate\Contracts\Http\Kernel', 'Orchestra\Testbench\Http\Kernel');
+        $app->singleton('Illuminate\Contracts\Http\Kernel', $this->applicationHttpKernelUsingWorkbench($app));
     }
 
     /**
@@ -337,7 +339,7 @@ trait CreatesApplication
      */
     protected function resolveApplicationExceptionHandler($app)
     {
-        $app->singleton('Illuminate\Contracts\Debug\ExceptionHandler', 'Orchestra\Testbench\Exceptions\Handler');
+        $app->singleton('Illuminate\Contracts\Debug\ExceptionHandler', $this->applicationExceptionHandlerUsingWorkbench($app));
     }
 
     /**
@@ -372,6 +374,11 @@ trait CreatesApplication
 
         $this->resolveApplicationRateLimiting($app);
 
+        if (static::usesTestingConcern(WithWorkbench::class)) {
+            /** @phpstan-ignore-next-line */
+            $this->bootDiscoverRoutesForWorkbench($app);
+        }
+
         $app->make('Illuminate\Foundation\Bootstrap\BootProviders')->bootstrap($app);
 
         if ($this->isRunningTestCase() && static::usesTestingConcern(HandlesRoutes::class)) {
@@ -385,13 +392,24 @@ trait CreatesApplication
 
         $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
+        $this->refreshApplicationRouteNameLookups($app);
+    }
+
+    /**
+     * Refresh route name lookup for the application.
+     *
+     * @param  \Illuminate\Foundation\Application  $app
+     * @return void
+     */
+    final protected function refreshApplicationRouteNameLookups($app)
+    {
         $refreshNameLookups = static function ($app) {
             $app['router']->getRoutes()->refreshNameLookups();
         };
 
         $refreshNameLookups($app);
 
-        $app->resolving('url', fn ($url, $app) => $refreshNameLookups($app));
+        $app->resolving('url', fn () => $refreshNameLookups($app));
     }
 
     /**

@@ -8,6 +8,10 @@ CHANGELOG
  * Add native return type to `AnnotationClassLoader::setResolver()`
  * Deprecate Doctrine annotations support in favor of native attributes
  * Change the constructor signature of `AnnotationClassLoader` to `__construct(?string $env = null)`, passing an annotation reader as first argument is deprecated
+ * Deprecate `AnnotationClassLoader`, use `AttributeClassLoader` instead
+ * Deprecate `AnnotationDirectoryLoader`, use `AttributeDirectoryLoader` instead
+ * Deprecate `AnnotationFileLoader`, use `AttributeFileLoader` instead
+ * Add `AddExpressionLanguageProvidersPass` (moved from `FrameworkBundle`)
 
 6.2
 ---

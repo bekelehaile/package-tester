@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'fidelopia/firstpackage',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'e134b3adb59033bb0523d5d3437cc5870d95a6f4',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -99,9 +99,9 @@
             'dev_requirement' => true,
         ),
         'fidelopia/firstpackage' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'e134b3adb59033bb0523d5d3437cc5870d95a6f4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -361,7 +361,7 @@
         'laravel/framework' => array(
             'pretty_version' => '10.x-dev',
             'version' => '10.9999999.9999999.9999999-dev',
-            'reference' => '2f88a3072ccec7ad47f910ca079f6b7cbebbfe44',
+            'reference' => 'a47df681bf4b72cb11e38f7ee7c285406ca934e0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/framework',
             'aliases' => array(),
@@ -370,7 +370,7 @@
         'laravel/prompts' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '984d911f03fe45f04c96914d1886d5f28d0fb380',
+            'reference' => 'b35f249028c22016e45e48626e19e5d42fd827ff',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/prompts',
             'aliases' => array(
@@ -381,7 +381,7 @@
         'laravel/serializable-closure' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '304bce22787c184b4dfc39b2f7ca7369390bd83c',
+            'reference' => '076fe2cf128bd54b4341cdc6d49b95b34e101e4c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/serializable-closure',
             'aliases' => array(
@@ -392,7 +392,7 @@
         'laravel/tinker' => array(
             'pretty_version' => '2.x-dev',
             'version' => '2.9999999.9999999.9999999-dev',
-            'reference' => '08a68807426e1fb4b14bb307c702fed8a40a5668',
+            'reference' => '708f9e68884e3c2d9e86ccbab56d4bf2f636b958',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/tinker',
             'aliases' => array(),
@@ -423,7 +423,7 @@
         'league/flysystem' => array(
             'pretty_version' => '3.x-dev',
             'version' => '3.9999999.9999999.9999999-dev',
-            'reference' => 'bd4c9b26849d82364119c68429541f1631fba94b',
+            'reference' => 'e5608b53ad11d5f71e95ad4f9054ea9c59e001b7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/flysystem',
             'aliases' => array(),
@@ -439,9 +439,9 @@
             'dev_requirement' => true,
         ),
         'league/mime-type-detection' => array(
-            'pretty_version' => '1.13.0',
-            'version' => '1.13.0.0',
-            'reference' => 'a6dfb1194a2946fcdc1f38219445234f65b35c96',
+            'pretty_version' => '1.14.0',
+            'version' => '1.14.0.0',
+            'reference' => 'b6a5854368533df0295c5761a0253656a2e52d9e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
@@ -552,7 +552,7 @@
         'orchestra/testbench' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => 'd092adbb0b6160a9e849cb10e2b288f6fe95b5f8',
+            'reference' => '572b7c52a2663650e219323a3ed407d505cbb5f6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../orchestra/testbench',
             'aliases' => array(
@@ -563,7 +563,7 @@
         'orchestra/testbench-core' => array(
             'pretty_version' => '8.x-dev',
             'version' => '8.9999999.9999999.9999999-dev',
-            'reference' => '09f8ad71304e94b5c2a5d4ffd9b193f000231a19',
+            'reference' => 'd754225e1a531734fa00567ac5cfaa0cf6ff4760',
             'type' => 'library',
             'install_path' => __DIR__ . '/../orchestra/testbench-core',
             'aliases' => array(),
@@ -572,7 +572,7 @@
         'orchestra/workbench' => array(
             'pretty_version' => '1.x-dev',
             'version' => '1.9999999.9999999.9999999-dev',
-            'reference' => '5292a83022edb511595de8e37de8b0c5f60a067d',
+            'reference' => '670d9bca0acd0f1b21d348af1fe1ab66bba7bb1a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../orchestra/workbench',
             'aliases' => array(),
@@ -612,7 +612,7 @@
         'phpunit/php-code-coverage' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2ae369f57faccdadb7793dd026e59d06dcfc7cee',
+            'reference' => 'cf79246d7c29e4af2eebfc4cbcc97b1301ad7a0a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/php-code-coverage',
             'aliases' => array(
@@ -1044,7 +1044,7 @@
         'symfony/console' => array(
             'pretty_version' => '6.4.x-dev',
             'version' => '6.4.9999999.9999999-dev',
-            'reference' => '2edf780da8823a82a2a7d33be54a4cbce48b8b4e',
+            'reference' => 'd9c21b11e19aaa3288d714015904debfca0da95d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/console',
             'aliases' => array(),
@@ -1117,7 +1117,7 @@
         'symfony/http-foundation' => array(
             'pretty_version' => '6.4.x-dev',
             'version' => '6.4.9999999.9999999-dev',
-            'reference' => 'da6dc962cef2dbbfc4cb499580a41e736663fe24',
+            'reference' => '2970be3ae68d786db4f834a191d7dc03d3b03bde',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/http-foundation',
             'aliases' => array(),
@@ -1126,7 +1126,7 @@
         'symfony/http-kernel' => array(
             'pretty_version' => '6.4.x-dev',
             'version' => '6.4.9999999.9999999-dev',
-            'reference' => '828c891e4c794aaf13e4a53e922753bf18256a30',
+            'reference' => '19f15ec4343b1fe727f8e781095152acebdee4e0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/http-kernel',
             'aliases' => array(),
@@ -1252,7 +1252,7 @@
         'symfony/routing' => array(
             'pretty_version' => '6.4.x-dev',
             'version' => '6.4.9999999.9999999-dev',
-            'reference' => '64dcc28275635413c3e17f4f174b0eec53c6f728',
+            'reference' => '301c798b11d90c9ee4142c664c5c7cd66b40faa9',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/routing',
             'aliases' => array(),
@@ -1290,7 +1290,7 @@
         'symfony/translation' => array(
             'pretty_version' => '6.4.x-dev',
             'version' => '6.4.9999999.9999999-dev',
-            'reference' => '164d253a801ab494e98cab49324d4142c8deff29',
+            'reference' => 'dfebe704ce8a9837400aefd613a3128319f00ea0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/translation',
             'aliases' => array(),
@@ -1325,7 +1325,7 @@
         'symfony/var-dumper' => array(
             'pretty_version' => '6.4.x-dev',
             'version' => '6.4.9999999.9999999-dev',
-            'reference' => 'df58ba3d7acbc032f0a4b9da057b9a26a3bb6f1e',
+            'reference' => '87e0d100b3db4f0972f4bf6f60b6c6b36d0446eb',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/var-dumper',
             'aliases' => array(),
