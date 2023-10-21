@@ -9,11 +9,20 @@ class FirstPackageServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-//        $this->loadRoutesFrom(__DIR__ . "/../Routes/web.php");
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'first-package');
+//        $this->loadRoutesFrom( $this->basePath('Routes/web.php"));
+        $this->loadViewsFrom($this->basePath('Resources/views'), 'first-package');
         $this->publishes([
-            __DIR__ . '/../Resources/views' => resource_path('views/vendor/first-package')
+            $this->basePath('Resources/views') => resource_path('views/vendor/first-package')
         ], 'first-package-view');
+
+        $this->publishes([
+            $this->basePath('Config/first-package.php') => base_path('config/first-package.php')
+        ], 'first-package-config');
+    }
+
+    protected function basePath($path): string
+    {
+        return __DIR__ . '/../' . $path;
     }
 
     public function register(): void
@@ -21,5 +30,8 @@ class FirstPackageServiceProvider extends ServiceProvider
         $this->app->bind('test-package', function () {
             return new Hello("John");
         });
+
+        $this->mergeConfigFrom($this->basePath('Config/first-package.php'), 'first-package');
     }
+
 }
