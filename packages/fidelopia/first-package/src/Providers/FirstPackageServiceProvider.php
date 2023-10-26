@@ -9,7 +9,7 @@ class FirstPackageServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->resources();
+        $this->resource();
         $this->publish();
     }
 
@@ -29,7 +29,8 @@ class FirstPackageServiceProvider extends ServiceProvider
     }
     protected function publish()
     {
-        $this->publishes([$this->basePath('resource/lang') => lang_path('vendor/first-package'), 'first-package-trans']);
+        // app()->getLocale()
+        $this->publishes([$this->basePath('resources/lang') => resource_path('lang/vendor/first-package/')], 'first-package-trans');
         $this->publishes([$this->basePath('database/migrations') => database_path('migrations')], 'first-package-migration');
         $this->publishes([
             $this->basePath('resources/views') => resource_path('views/vendor/first-package')
@@ -39,20 +40,21 @@ class FirstPackageServiceProvider extends ServiceProvider
         ], 'first-package-config');
     }
 
-    protected function resources()
+    protected function resource()
     {
-        $this->views();
+        $this->view();
     }
 
-    protected function routes()
+    protected function route()
     {
         // $this->loadRoutesFrom( $this->basePath('Routes/web.php"));
     }
 
-    protected function views()
+    protected function view()
     {
         $this->loadViewsFrom($this->basePath('resources/views'), 'first-package');
         $this->loadMigrationsFrom($this->basePath('database/migrations'));
         $this->loadTranslationsFrom($this->basePath('resources/lang'), 'first-package');
+        $this->loadJsonTranslationsFrom($this->basePath('resources/lang'));
     }
 }
