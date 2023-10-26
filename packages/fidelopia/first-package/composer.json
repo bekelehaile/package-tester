@@ -12,7 +12,8 @@
             "src/Helper.php"
         ],
         "psr-4": {
-            "Fidelopia\\FirstPackage\\": "src/"
+            "Fidelopia\\FirstPackage\\": "src/",
+            "Fidelopia\\FirstPackage\\App\\": "src/app"
         }
     },
     "autoload-dev": {

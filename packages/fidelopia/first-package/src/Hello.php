@@ -13,6 +13,6 @@ class Hello
 
     public function hello(): string
     {
-        return "Welcome {$this->name}";
+        return "Well come {$this->name}";
     }
 }

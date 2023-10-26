@@ -2,6 +2,7 @@
 
 @section('content')
     <main>
-        <h1>{{$message}} view publish modification is done</h1>
+        <h1>{{ $message }}</h1>
+        <p> Translation: {{ trans('first-package::message.welcome') }}</p>
     </main>
 @endsection
