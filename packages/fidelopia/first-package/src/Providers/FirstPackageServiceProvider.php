@@ -38,6 +38,9 @@ class FirstPackageServiceProvider extends ServiceProvider
         $this->publishes([
             $this->basePath('config/first-package.php') => base_path('config/first-package.php')
         ], 'first-package-config');
+        $this->publishes([
+            $this->basePath('resources/assets') => public_path('vendor/assets')
+        ], 'first-package-asset');
     }
 
     protected function resource()
